@@ -14,3 +14,5 @@ ktoś wpisuje słowo i robi się index map-reduce później już cache
 * Python 2.5 +
 * CouchDB (http://couchdb.apache.org/#download)
 * CouchApp (https://github.com/couchapp/couchapp)
+
+For Python I strongly recommend to use ```virtualenv```
