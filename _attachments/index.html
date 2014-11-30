@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example CouchApp</title>
-    <link rel="stylesheet" href="style/main.css" type="text/css">
+    <title>TAI CouchApp</title>
   </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
   <body>
-    <div id="account"></div>
-
-    <h1>Example CouchApp</h1>
-
-    <div id="profile">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <span class="navbar-brand">TAI Couchapp</span>
+        </div>
+        <form class="navbar-form navbar-nav" style="text-align:center;" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </form>
+        <span class="navbar-nav navbar-right" id="account"></span>
+      </div>
+    </nav>
+    <div class="container center-block" style="width:940">
+        <div id="profile"></div>
+        <div id="content"></div>
     </div>
-    <div id="content"></div>
-
-    <div id="sidebar">
-      <p>Edit welcome message.</p>
-      <p>Ideas: You could easily turn this into a photo sharing app, 
-          or a grocery list, or a chat room. <a href="https://github.com/couchapp/example">Code for this app is on Github.</a></p>
-    </div>
+    <footer class="navbar-fixed-bottom">
+      <em>Dawid Romanowski i Bartosz Grabski</em>
+    </footer>
   </body>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="/_utils/script/sha1.js"></script>
   <script src="/_utils/script/json2.js"></script>
-  <script src="/_utils/script/jquery.js"></script>
   <script src="/_utils/script/jquery.couch.js"></script>
   <script src="vendor/couchapp/jquery.couchLogin.js"></script>
   <script src="vendor/couchapp/jquery.couchProfile.js"></script>
   <script src="vendor/couchapp/md5.js"></script>
   <script src="vendor/couchapp/jquery.mustache.js"></script>
-
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <!-- templates used by app.js -->
   <script id="new-message" type="text/x-mustache" charset="utf-8">
-      <div class="avatar">
+    
+  <form id="create-message">
+    <div class="input-group">      
+      <div class="avatar input-group-addon">
         {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
-        <div class="name">
-          {{name}}
-        </div>
       </div>
-      <form id="create-message">
-        <label>New message from {{nickname}}: <input type="text" name="message" size=60 value=""></label>
-      </form>
-      <div style="clear:left;"></div>
+      <input type="text" class="form-control" placeholder="Message" name="message" size=60 value="">
+    </div>
+  </form>
   </script>
 
   <script id="recent-messages" type="text/x-mustache" charset="utf-8">
-        <h3>Recent Messages</h3>
-        <ul id="items">
+        <ul class="list-group" id="items">
           {{#items}}
-            <li>
+            <li class="list-group-item">
               <div class="avatar">
                 {{#gravatar_url}}<img src="{{gravatar_url}}" alt="{{name}}"/>{{/gravatar_url}}
                 <div class="name">
@@ -58,8 +67,6 @@
             </li>
           {{/items}}
         </ul>
-        <p><em>Protip:</em> If you setup continuous replication between this database and a remote one, this list will reflect remote changes in near real-time.</p>
-        <p>This would be a good place to add pagination.</p>
   </script>
   <script src="script/app.js"></script>
 

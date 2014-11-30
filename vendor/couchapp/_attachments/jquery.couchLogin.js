@@ -66,17 +66,17 @@
         });
     }
     var templates = {
-        adminParty : '<p><strong>Admin party, everyone is admin!</strong> Fix this in <a href="/_utils/index.html">Futon</a> before proceeding.</p>',
-        loggedOut : '<a href="#signup">Signup</a> or <a href="#login">Login</a>',
-        loginForm : '<form class="login"><label for="name">Name</label> <input type="text" name="name" value="" autocapitalize="off" autocorrect="off"><label for="password">Password</label> <input type="password" name="password" value=""><input type="submit" value="Login"><a href="#signup">or Signup</a></form>',
-        signupForm : '<form class="signup"><label for="name">Name</label> <input type="text" name="name" value="" autocapitalize="off" autocorrect="off"><label for="password">Password</label> <input type="password" name="password" value=""><input type="submit" value="Signup"><a href="#login">or Login</a></form>'
+        adminParty : '<p class="navbar-form navbar-right"><strong>Admin party, everyone is admin!</strong> Fix this in <a href="/_utils/index.html">Futon</a> before proceeding.</p>',
+        loggedOut : '<span class="navbar-form navbar-right"><a class="btn btn-default" href="#signup">Signup</a><a class="btn btn-default" href="#login">Login</a></span>',
+        loginForm : '<form class="login navbar-form navbar-right"><div class="form-group"> <input class="form-control" type="text" name="name" value="" autocapitalize="off" autocorrect="off" placeholder="Username"> <input class="form-control" type="password" name="password" value="" placeholder="Password"><input class="btn btn-default" type="submit" value="Login"><a class="btn btn-default" href="#signup">or Signup</a></div></form>',
+        signupForm : '<form class="signup navbar-form navbar-right"><div class="form-group"><input class="form-control" type="text" name="name" value="" autocapitalize="off" autocorrect="off" placeholder="Username"> <input class="form-control" type="password" name="password" value="" placeholder="Password"><input class="btn btn-default" type="submit" value="Signup"><a class="btn btn-default" href="#login">or Login</a></div></form>'
     };
     function loggedIn(r) {
         var auth_db = encodeURIComponent(r.info.authentication_db)
         , uri_name = encodeURIComponent(r.userCtx.name)
-        , span = $('<span>Welcome <a target="_new" href="/_utils/document.html?' 
+        , span = $('<span class="navbar-form navbar-right"> <a class="btn btn-default" href="#logout">Logout</a></span><span class="navbar-form navbar-right">Welcome <a target="_new" href="/_utils/document.html?' 
             + auth_db +'/org.couchdb.user%3A' + uri_name 
-            + '" class="name"></a>! <a href="#logout">Logout?</a></span>');
+            + '" class="name"></a></span>' );
         $('a.name', span).text(r.userCtx.name); // you can get the user name here
         return span;
     }
