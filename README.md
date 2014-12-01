@@ -15,11 +15,16 @@ The goal of this project was to research CouchDB and set up a simple search engi
 
 The search itself is performed in a simple manner. User inputs a string of comma delimited keys into the search box. The result is a set of documents which contain ANY of the search terms.
 
+## Technologies used ##
+
+We use CouchApp JavaScript libraries (based on jQuery) to communicate with the server backend. For simple HTML styling we added Bootstrap css and javascript libraries.
+
 ## Directory structure ##
 
-* ```_attachments``` - holds HTML,JavaScript and CSS files. 
+* ```_attachments``` - holds HTML,JavaScript and CSS files.
 * ```vendor``` - external libraries (jQuery, extensions which provide authentication capabilities etc.)
 * ```views``` - views defined by user. Each views is stored inside a named folder which contains map.js and reduce.js files. Each files defines a function. See Knowledge Base section for Map/Reduce in CouchDB info.
+* ```.couchappignore``` -
 
 ## Installation ##
 
@@ -33,16 +38,18 @@ Now run ```setup.sh```. You should see an output like [this](images/setup.png).
 
 ## How to use ##
 
-The CouchApp enables user to perform a quick search over a set of documents using keywords. Currently the set of documents is a 12MB collection of post on Stack Exchange. To add new documents to the collection user must signup and login.
+The CouchApp enables user to perform a quick search over a set of documents using keywords. Currently the set of documents is a 12MB collection of posts from Stack Exchange. To add new documents to the collection user must perform signup and/or login.
 
-After installation, navigate to the main page. Peform a sign up. The application will ask you to set up your nickname. You will be automatically logged in after signup, so you are ready to add new messages (documents).
+After installation, navigate to the main page. Peform a sign up/login. The application will ask you to set up your nickname if you had not done it before. You will be automatically logged in after signup, so you are ready to add new messages (documents).
 
-To perform a search type keywords separated by a comma into the searchbox on the topbar. 
+To perform a search type keywords separated by a comma into the searchbox on the topbar. The result set is a set of documents containing any of the keywords.
+
 
 ## Knowledge Base ##
 
 * http://materials.geoinfo.tuwien.ac.at/tutorials/couchapp/html/2-Start.html
 * User creation - http://guide.couchdb.org/draft/security.html#users
 * Map/Reduce Views - http://wiki.apache.org/couchdb/Introduction_to_CouchDB_views
-* http://virtualenv.readthedocs.org/en/latest/virtualenv.html
+* VirtualEnv - http://virtualenv.readthedocs.org/en/latest/virtualenv.html
+* Bootstrap website - http://getbootstrap.com/
 
