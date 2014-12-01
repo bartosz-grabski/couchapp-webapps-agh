@@ -24,7 +24,11 @@ We use CouchApp JavaScript libraries (based on jQuery) to communicate with the s
 * ```_attachments``` - holds HTML,JavaScript and CSS files.
 * ```vendor``` - external libraries (jQuery, extensions which provide authentication capabilities etc.)
 * ```views``` - views defined by user. Each views is stored inside a named folder which contains map.js and reduce.js files. Each files defines a function. See Knowledge Base section for Map/Reduce in CouchDB info.
-* ```.couchappignore``` -
+* ```.couchappignore``` - defines files which are ignored while pushing to CouchDB
+* ```.couchapprc``` - stores deployment settings
+* ```posts.json``` - collection of posts from Stack Exchange
+* ```setup.sh``` - application setup and configuration
+* ```couchapp.json``` - basic information about our project
 
 ## Installation ##
 
