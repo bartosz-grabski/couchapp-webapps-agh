@@ -17,7 +17,7 @@ The search itself is performed in a simple manner. User inputs a string of comma
 
 ## Technologies used ##
 
-We use CouchApp JavaScript libraries (based on jQuery) to communicate with the server backend. For simple HTML styling we added Bootstrap css and javascript libraries.
+CouchDB is used as backend database server. We use CouchApp JavaScript libraries (based on jQuery) to communicate with the server. For simple HTML styling we added Bootstrap css and javascript libraries.
 
 ## Directory structure ##
 
