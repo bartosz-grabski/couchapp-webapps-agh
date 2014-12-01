@@ -45,7 +45,7 @@ $(function() {
         }
     }
     $.couchProfile.templates.profileReady = $("#new-message").html();
-    $.couchProfile.templates.newProfile = '<form class="form-inline"><p>Hello {{name}}, Please setup your user profile.</p><label for="nickname">Nickname <input type="text" name="nickname" value=""></label><input type="submit" value="Go &rarr;"><input type="hidden" name="userCtxName" value="{{name}}" id="userCtxName"></form>'
+    $.couchProfile.templates.newProfile = '<p>Hello {{name}}, Please setup your user profile.</p><form role="form"><div class="form-group"><label for="nickname">Nickname </label><input type="text" class="form-control" name="nickname" value=""></div><input type="submit" class="btn btn-default" value="Go &rarr;"><input type="hidden" name="userCtxName" value="{{name}}" id="userCtxName"></form>'
 
 
     $("#account").couchLogin({
