@@ -1,16 +1,3 @@
-couchapp-webapps-agh
-====================
-* rejestrowanie użytkowników
-* anonimowi przeglądać
-* każdy może pisać cokolwiek
-* wrzucić jakieś sensowne teksty
-* podefiniować map-reduce
-* ktoś wpisuje słowo i robi się index map-reduce później już cache
-* jakieś po zdaniach ewentualnie
-* za 2 tyg spotkanie
-* bedzie jakaś prosta dokumentacja
- 
-
 ## Prerequisites ##
 * Python 2.5 + (with pip manager)
 * CouchDB (http://couchdb.apache.org/#download)
@@ -26,6 +13,8 @@ After CouchDB is up and running add a new admin user (see User creation in Knowl
 
 The goal of this project was to research CouchDB and set up a simple search engine application which will benefit from CouchDB's map/reduce views. An authenticated user can add new content to the database. Search can be performed by any user (also anonymous)
 
+The search itself is performed in a simple manner. User inputs a string of comma delimited keys into the search box. The result is a set of documents which contain ANY of the search terms.
+
 ## Directory structure ##
 
 * ```_attachments``` - holds HTML,JavaScript and CSS files. 
@@ -34,9 +23,17 @@ The goal of this project was to research CouchDB and set up a simple search engi
 
 ## Installation ##
 
-Clone the repository and edit file setup.sh. Change user authentication credentials in url to your previously created admin user/password.
+Clone the github repository to your local machine.
 
-You can also change values of database you will be pushing documents to. The default value is 'tai'
+```git clone git@github.com:bartosz-grabski/couchapp-webapps-agh.git```
+
+Edit file ```setup.sh```. Change user authentication credentials in url to your previously created admin user/password (see Prerequisites section).You can also change values of database you will be pushing documents to. The default value is 'tai'
+
+Now run ```setup.sh```. You should see an output like this.
+
+
+
+
 
 ## How to use ##
 
