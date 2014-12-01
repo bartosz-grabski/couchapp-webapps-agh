@@ -36,6 +36,7 @@ $(function() {
     };
     drawItems();
     var changesRunning = false;
+
     function setupChanges(since) {
         if (!changesRunning) {
             var changeHandler = db.changes(since);
@@ -44,6 +45,9 @@ $(function() {
         }
     }
     $.couchProfile.templates.profileReady = $("#new-message").html();
+    $.couchProfile.templates.newProfile = '<form class="form-inline"><p>Hello {{name}}, Please setup your user profile.</p><label for="nickname">Nickname <input type="text" name="nickname" value=""></label><input type="submit" value="Go &rarr;"><input type="hidden" name="userCtxName" value="{{name}}" id="userCtxName"></form>'
+
+
     $("#account").couchLogin({
         loggedIn : function(r) {
             $("#profile").couchProfile(r, {
@@ -62,5 +66,23 @@ $(function() {
         loggedOut : function() {
             $("#profile").html('<p>Please log in to see your profile.</p>');
         }
+    });
+    $("#search").submit(function(e) {
+        e.preventDefault();
+        var form = this, keys = $(form).serializeObject().search;
+        keys = keys.split(",");
+        db.view(design + "/find-items", {
+            descending : "true",
+            limit : 50,
+            update_seq : true,
+            keys : keys,
+            success : function(data) {
+                setupChanges(data.update_seq);
+                var them = $.mustache($("#recent-messages").html(), {
+                    items : data.rows.map(function(r) {return r.value;})
+                });
+                $("#content").html(them);
+            }
+        });
     });
  });
