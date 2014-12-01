@@ -3,7 +3,7 @@
 * CouchDB (http://couchdb.apache.org/#download)
 * CouchApp (https://github.com/couchapp/couchapp)
 
-For Python I strongly recommend to use ```virtualenv```
+For Python I strongly recommend to use ```virtualenv``` (see Knowledge Base)
 
 Installation of CouchApp might require installation of python package manager - pip. CouchDB installation should perform smoothly, as binaries are provided for every available major OS.
 
@@ -29,11 +29,7 @@ Clone the github repository to your local machine.
 
 Edit file ```setup.sh```. Change user authentication credentials in url to your previously created admin user/password (see Prerequisites section).You can also change values of database you will be pushing documents to. The default value is 'tai'
 
-Now run ```setup.sh```. You should see an output like this.
-
-
-
-
+Now run ```setup.sh```. You should see an output like [this](images/setup.png).
 
 ## How to use ##
 
@@ -48,4 +44,5 @@ To perform a search type keywords separated by a comma into the searchbox on the
 * http://materials.geoinfo.tuwien.ac.at/tutorials/couchapp/html/2-Start.html
 * User creation - http://guide.couchdb.org/draft/security.html#users
 * Map/Reduce Views - http://wiki.apache.org/couchdb/Introduction_to_CouchDB_views
+* http://virtualenv.readthedocs.org/en/latest/virtualenv.html
 
